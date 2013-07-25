@@ -5,7 +5,7 @@
 
 @import "compass/reset";
 @import "bourbon";
-@import "../plugins/flexslider/flexslider.css";
+@import "../plugins/galleria/themes/fullscreen/galleria.fullscreen.css";
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_inline-webfont', 700);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_light-webfont', 100);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps-webfont', 500);
@@ -95,10 +95,13 @@ body {
 }
 main {
 	.slider {
-		@include clearfix;
+		
 		//.slides {
 		//	position: absolute;
 		//	bottom: 0;
 		//}
 	}
+}
+.galleria-info {
+	display: none !important;
 }

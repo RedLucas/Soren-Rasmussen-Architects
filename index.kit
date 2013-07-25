@@ -28,13 +28,11 @@
 			
 			</section>
 			<main>
-				<div class="slider">
-			<div id="background" class="background flexslider carousel">
-				<ul class="slides">
-					<li><img class="background-bw" src="images/sidney-b-w.png" /></li>
-					<li><img class="background-color" src="images/sidney-color.png" /></li>
-				</ul>
-				
+				<div id="galleria" class="galleria">
+					<img src="images/back-yard.jpg" alt="back-yard" width="1800" height="1350">
+					<img class="background-bw" alt="back-yard" src="images/sidney-b-w.svg" />
+					<img class="background-color" alt="back-yard" src="images/sidney-color.svg" />
+					
 			</div>
 		</div>
 
@@ -62,6 +60,25 @@
 			</footer>
 		</div>
 		<script src="scripts/jquery-2.0.3.js" charset="utf-8"></script>
+		<script src="plugins/galleria/galleria-1.2.9.js"></script>
 		
+		<script>
+			Galleria.loadTheme('plugins/galleria/themes/fullscreen/galleria.fullscreen.min.js');
+			/*Galleria.configure({
+				autoplay: true;
+			});*/
+			Galleria.run('#galleria', {
+				autoplay: true, 
+				_hideDock: true,
+				transition: 'fade',
+				transitionSpeed: 2000,
+				imageCrop: 'width'
+			});
+			
+			
+		</script>
+		<script>
+			$(.galleria-container.notouch.fullscreen).css('height', 'calc(100% - 130px)');
+		</script>
 	</body>
 </html>
