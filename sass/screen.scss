@@ -1,0 +1,66 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "bourbon";
+@import "blueprint";
+
+$blue: #00839E;
+$red: #D8232A;
+$white: #FFFFFE;
+$black: #1A1919;
+
+* {
+	@include box-sizing(border-box);
+}
+html {
+	background-image: url(../images/back-yard.jpg);
+	
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body {
+	min-width: 900px;
+	max-width: 1600px;
+	margin: 10px auto;
+}
+.main-header {
+	background: rgba($white, 0.95);
+	font-size: 2.5em;
+	height: 200px;
+	.logo {
+		height: 200px;
+		display: block;
+		float: left;
+	}
+	.text-header {
+		padding: 40px  0 0 40px;
+		float: left;
+		width: calc(100%-200px);
+		h1 {
+			color: $red;
+			font-family: "Times New Roman", Times, serif;
+			font-style: italic;
+			font-weight: 200;
+			font-size: 2.0em;
+			text-align: center;
+		}
+		nav {
+			li {
+				display: inline-block;
+				a {
+					text-decoration: none;
+					color: $blue;
+				}
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	
+}
