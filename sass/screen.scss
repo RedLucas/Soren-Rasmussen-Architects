@@ -5,7 +5,7 @@
 
 @import "compass/reset";
 @import "bourbon";
-
+@import "../plugins/flexslider/flexslider.css";
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_inline-webfont', 700);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_light-webfont', 100);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps-webfont', 500);
@@ -22,11 +22,8 @@ body {
 	position: relative;
 
 }
-.background {
-	background-image: url(../working-files/sidney.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: contain;
+/*.background {
+	
 	height: 100%;
 	z-index: 50;
 	position: absolute;
@@ -35,8 +32,12 @@ body {
     left:0;
     right:0;
     overflow:hidden;
-}
+    img {
+	    width: 100%;
+    }
+}*/
 .container {
+	position: relative;
 	min-width: 900px;
 	max-width: 1600px;
 	margin: 0 auto;
@@ -44,6 +45,7 @@ body {
 }
 .main-header {
 	height: 125px;
+	z-index: 100;
 	img {
 		height: 125px;
 		display: block;
@@ -92,5 +94,11 @@ body {
 	}
 }
 main {
-	min-height: 1000px;
+	.slider {
+		@include clearfix;
+		//.slides {
+		//	position: absolute;
+		//	bottom: 0;
+		//}
+	}
 }
