@@ -5,62 +5,92 @@
 
 @import "compass/reset";
 @import "bourbon";
-@import "blueprint";
 
-$blue: #00839E;
-$red: #D8232A;
-$white: #FFFFFE;
-$black: #1A1919;
-
+@include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_inline-webfont', 700);
+@include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_light-webfont', 100);
+@include font-face(BlanchCaps, '../fonts/blanch/blanch_caps-webfont', 500);
+$blue-theme: #00839E;
+$red-theme: #D8232A;
+$black-theme: #1A1919;
+$white-theme: #FFFFFE;
 * {
 	@include box-sizing(border-box);
 }
-html {
-	background-image: url(../images/back-yard.jpg);
-	
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
-
 body {
+	font-size: 16px;
+	min-height: 100%;
+	position: relative;
+
+}
+.background {
+	background-image: url(../working-files/sidney.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	height: 100%;
+	z-index: 50;
+	position: absolute;
+	top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+}
+.container {
 	min-width: 900px;
 	max-width: 1600px;
-	margin: 10px auto;
+	margin: 0 auto;
+	z-index: 100;
 }
 .main-header {
-	background: rgba($white, 0.95);
-	font-size: 2.5em;
-	height: 200px;
-	.logo {
-		height: 200px;
+	height: 125px;
+	img {
+		height: 125px;
 		display: block;
 		float: left;
 	}
 	.text-header {
-		padding: 40px  0 0 40px;
 		float: left;
-		width: calc(100%-200px);
+		margin: auto;
+		width: calc(100% - 125px);
+		width: -webkit-calc(100% - 125px);
+		height: 125px;
+		padding: 25px;
+		font-size: 1.2em;
 		h1 {
-			color: $red;
-			font-family: "Times New Roman", Times, serif;
-			font-style: italic;
-			font-weight: 200;
-			font-size: 2.0em;
-			text-align: center;
+			font-size: 1.5em;
+			color: $red-theme;
+			font-weight: 700;
+			margin-left: 5%;
+			font-family: "Quicksand";
 		}
 		nav {
-			li {
-				display: inline-block;
-				a {
-					text-decoration: none;
-					color: $blue;
-				}
-				a:hover {
-					text-decoration: underline;
+			color: $blue-theme;
+			ul {
+				
+				margin-top: 10px;
+				li {
+					display: inline-block;
+					height: 50px;
+					padding: 5px 5%;
+					a {
+						
+						color: $blue-theme;
+						text-decoration: none;
+						font-weight: 100;
+						font-family: "BlanchCaps", serif;
+						font-size: 2.2em;
+						line-height: 50px;
+					}
+					a:hover {
+						font-weight: 500;
+						line-height: 46px;
+					}
 				}
 			}
 		}
 	}
-	
+}
+main {
+	min-height: 1000px;
 }
