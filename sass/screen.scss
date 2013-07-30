@@ -5,7 +5,6 @@
 
 @import "compass/reset";
 @import "bourbon";
-@import "../plugins/galleria/themes/fullscreen/galleria.fullscreen.css";
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_inline-webfont', 700);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_light-webfont', 100);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps-webfont', 500);
@@ -38,14 +37,16 @@ body {
 }*/
 .container {
 	position: relative;
-	min-width: 900px;
-	max-width: 1600px;
 	margin: 0 auto;
 	z-index: 100;
+	width: 100%;
 }
 .main-header {
+	margin: 0 auto;
 	height: 125px;
 	z-index: 100;
+	min-width: 900px;
+	max-width: 1600px;
 	img {
 		height: 125px;
 		display: block;
@@ -54,8 +55,8 @@ body {
 	.text-header {
 		float: left;
 		margin: auto;
-		width: calc(100% - 125px);
-		width: -webkit-calc(100% - 125px);
+		width: calc(100% - 126px);
+		width: -webkit-calc(100% - 126px);
 		height: 125px;
 		padding: 25px;
 		font-size: 1.2em;
@@ -94,14 +95,55 @@ body {
 	}
 }
 main {
-	.slider {
-		
-		//.slides {
-		//	position: absolute;
-		//	bottom: 0;
-		//}
+	font-family: "Quicksand", sans-serif;
+	min-width: 900px;
+	max-width: 1600px;
+	width: 100%;
+	margin: auto;
+	.content {
+		@include clearfix;
+		padding: 15px;
+		article {
+			//background-image: url(../images/creampaper/creampaper.png);
+			@include linear-gradient($white-theme 0%, $white-theme 50%, lighten($blue-theme, 68%) 100%);
+			border-radius: 10px;
+			border: 1px ridge grey;
+			float: left;
+			width: 32.66%;
+			padding: 15px;
+			margin-left: 1%;
+			h3 {
+				font-weight: 300;
+				font-size: 1.8em;
+				line-height: 2;
+			}
+			p {
+				line-height: 2.5;
+				font-size: 1.1em;
+			}
+			img {
+				width: 75%;
+				margin: 10%;
+				text-align: center;
+			}
+		}
+		article:first-child {
+			margin-left: 0;
+		}
 	}
 }
-.galleria-info {
-	display: none !important;
-}
+	.sidney {
+		width: 100%;
+		background-image: url(../images/sidney-color.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center bottom;
+		height: 400px;
+	
+	}
+	@media screen and (min-width: 1260px) {
+		.sidney {
+			height: 600px;
+		}
+	}
+
