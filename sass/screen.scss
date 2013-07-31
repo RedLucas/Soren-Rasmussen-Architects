@@ -2,12 +2,17 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "compass/reset";
 @import "bourbon";
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_inline-webfont', 700);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps_light-webfont', 100);
 @include font-face(BlanchCaps, '../fonts/blanch/blanch_caps-webfont', 500);
+@include font-face(Quicksand, '../fonts/quicksand/quicksand-300-webfont', 300);
+@include font-face(Quicksand, '../fonts/quicksand/quicksand-regular-webfont', 500);
+@include font-face(Quicksand, '../fonts/quicksand/quicksand-700-webfont', 700);
+
+@import "../plugins/galleria/themes/fullscreen/galleria.fullscreen.css";
+
 $blue-theme: #00839E;
 $red-theme: #D8232A;
 $black-theme: #1A1919;
@@ -19,6 +24,7 @@ body {
 	font-size: 16px;
 	min-height: 100%;
 	position: relative;
+	font-family: "Quicksand", sans-serif;
 
 }
 /*.background {
@@ -47,6 +53,7 @@ body {
 	z-index: 100;
 	min-width: 900px;
 	max-width: 1600px;
+	background-color: $white-theme;
 	img {
 		height: 125px;
 		display: block;
@@ -100,9 +107,10 @@ main {
 	max-width: 1600px;
 	width: 100%;
 	margin: auto;
+	@include clearfix;
 	.content {
 		@include clearfix;
-		padding: 15px;
+		padding: 15px 15px 0px;
 		article {
 			//background-image: url(../images/creampaper/creampaper.png);
 			@include linear-gradient($white-theme 0%, $white-theme 50%, lighten($blue-theme, 68%) 100%);
@@ -141,9 +149,78 @@ main {
 		height: 400px;
 	
 	}
+	.contact-page .sidney {
+		height: 100%;
+	}
 	@media screen and (min-width: 1260px) {
 		.sidney {
 			height: 600px;
 		}
+		.content {
+			padding: 15px 5% 0;
+		
+		
+			article {
+				border-radius: 10px;
+				border: 1px ridge grey;
+				float: left;
+				width: 31.66%;
+				padding: 15px;
+				margin-left: 2%;
+			}
+		}
 	}
+footer {
+	
+	p {
+		font-size: 1em;
+		font-weight: 700;
+		text-align: center;
+		line-height: 2;
+		padding: 15px;
+	}
+}
 
+.info-icon {
+	float: left;
+	display: block;
+	width: 50%;
+}
+// Form Specific styles
+
+form {
+	width: 400px;
+	float: left;
+	display: block;
+	input {
+		width: 100%;
+		display: block;
+		margin: 15px;
+		@include placeholder {
+			font-family: "Quicksand", sans-serif;
+		}
+		
+	}
+	label {
+		display: block;
+		margin: 15px;
+	}
+	textarea {
+		width: calc(50% + 15px);
+		display: block;
+		margin: 15px 0;
+	}
+	
+}
+
+// Galleria specific Styles
+
+html body .content .galleria-info {
+	
+	@include transition(all 0.5s ease-in !important);
+	color: $red-theme;
+	font-weight: 700;
+	bottom: 0;
+	top: none;
+	
+}
